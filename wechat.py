@@ -1,4 +1,5 @@
 '''import itchat and login'''
+'''Try this on Jupyter notebook so you don't need to log many times'''
 import itchat
 itchat.login()
 friends = itchat.get_friends(update=True)[0:]
