@@ -1,5 +1,5 @@
 #!/bin/bash
-
+# command format is sh for_loop_date.sh 02/17/2017 02/20/2017
 echo 'start date = ' $1
 echo 'end date = ' $2
 
