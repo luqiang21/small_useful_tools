@@ -55,13 +55,21 @@ def russian(a,b):
         x = x >> 1
     return z
 
+def rec_russian(a, b):
+    if a == 0: return 0
+    if a%2 == 0: return rec_russian(a/2, b)
+    return b + rec_russian((a-1)/2, b)
+
 maxsize = 24
 ns  = [1 << i for i in range(maxsize)]
 ns2 = [1.0*ns[i]/ns[-1] for i in range(maxsize)]
 
 timesn = [Timer(1, naive, n, n)[0] for n in ns]
-plot(ns2, timesn, 'Time (sec) for naive(n,n)  versus  n/(2**'   + str(maxsize-1) + ')', 'unit1-10.png')
+plot(ns2, timesn, 'Time (sec) for naive(n,n)  versus  n/(2**'   + str(maxsize-1) + ')', 'naive.png')
 
 timesr = [Timer(100000, russian, n, n)[0] for n in ns]
-plot(ns2, timesr, 'Time (sec) for russian(n,n)  versus  n/(2**' + str(maxsize-1) + ')', 'unit1-19.png')
+plot(ns2, timesr, 'Time (sec) for russian(n,n)  versus  n/(2**' + str(maxsize-1) + ')', 'russian.png')
+
+timesr = [Timer(100000, rec_russian, n, n)[0] for n in ns]
+plot(ns2, timesr, 'Time (sec) for russian(n,n)  versus  n/(2**' + str(maxsize-1) + ')', 'rec_russian.png')
 print 'pngs written to file.'
