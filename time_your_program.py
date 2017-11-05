@@ -46,6 +46,11 @@ def naive(a,b):
         x = x - 1
     return z
 
+def rec_naive(a, b):
+    if a == 0:
+        return 0
+    return b + rec_naive(a-1, b)
+
 def russian(a,b):
     x = a; y = b
     z = 0
@@ -66,6 +71,9 @@ ns2 = [1.0*ns[i]/ns[-1] for i in range(maxsize)]
 
 timesn = [Timer(1, naive, n, n)[0] for n in ns]
 plot(ns2, timesn, 'Time (sec) for naive(n,n)  versus  n/(2**'   + str(maxsize-1) + ')', 'naive.png')
+
+timesn = [Timer(1, rec_naive, n, n)[0] for n in range(24)]
+plot(ns2, timesn, 'Time (sec) for naive(n,n)  versus  n/(2**'   + str(maxsize-1) + ')', 'rec_naive.png')
 
 timesr = [Timer(100000, russian, n, n)[0] for n in ns]
 plot(ns2, timesr, 'Time (sec) for russian(n,n)  versus  n/(2**' + str(maxsize-1) + ')', 'russian.png')
