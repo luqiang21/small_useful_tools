@@ -1,12 +1,13 @@
+"""game module"""
 class Game:
-    """"""
+    """game"""
     def __init__(self):
         """constructor"""
         self.score = 0
         self.pins = [0 for i in range(11)]
 
     def roll(self, numOfRolls, pins):
-        """"""
+        """roll"""
         x = 0
         for pin in pins:
             self.pins[x] = pin
@@ -15,7 +16,7 @@ class Game:
         x = 0
         spare_begin = 0
         spare_end = 2
-        for roll in range(numOfRolls):
+        for _ in range(numOfRolls):
             spare = sum(self.pins[spare_begin:spare_end])
 
             if self.pins[x] == 10:

@@ -1,0 +1,11 @@
+{
+  "tests/test_binary.py::test_binary_init_binstr": true,
+  "tests/test_binary.py::test_binary_init_bitstr": true,
+  "tests/test_binary.py::test_binary_init_hex": true,
+  "tests/test_binary.py::test_binary_init_hexstr": true,
+  "tests/test_binary.py::test_binary_init_inseq": true,
+  "tests/test_binary.py::test_binary_init_int": true,
+  "tests/test_binary.py::test_binary_init_strseq": true,
+  "tests/test_binary.py::test_binary_int": true,
+  "tests/test_binary.py::test_binary_str": true
+}
