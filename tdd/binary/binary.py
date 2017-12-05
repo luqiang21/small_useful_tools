@@ -18,4 +18,15 @@ class Binary():
             except ValueError:
                 raise ValueError("Cannot convert value {} to Binary".format(value))
 
-     
+    def __int__(self):
+        return self._value
+
+    def __index__(self):
+        # to correct return an integer
+        return self.__int__()
+
+    def __str__(self):
+        return bin(self)[2:]
+
+    def __eq__(self, other):
+        return int(self) == int(other)
