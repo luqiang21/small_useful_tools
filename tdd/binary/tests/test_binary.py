@@ -71,3 +71,13 @@ def test_binary_and():
 
 def test_binary_shl_pos():
     assert Binary('1101') << 5 == Binary('110100000')
+
+def test_binary_slice():
+    assert Binary('01101010')[0:3] == Binary('10')
+    assert Binary('01101010')[1:4] == Binary('101')
+    assert Binary('01101010')[4:] == Binary('110')
+
+def test_binary_illegal_index():
+    with pytest.raises(IndexError):
+        Binary('01101010')[7]
+

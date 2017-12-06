@@ -1,10 +1,1 @@
-{
-  "tests/test_binary.py::test_binary_addition_binary": true,
-  "tests/test_binary.py::test_binary_addition_int": true,
-  "tests/test_binary.py::test_binary_and": true,
-  "tests/test_binary.py::test_binary_division_int": true,
-  "tests/test_binary.py::test_binary_division_rem_int": true,
-  "tests/test_binary.py::test_binary_get_bit": true,
-  "tests/test_binary.py::test_binary_not": true,
-  "tests/test_binary.py::test_binary_shl_pos": true
-}
+{}

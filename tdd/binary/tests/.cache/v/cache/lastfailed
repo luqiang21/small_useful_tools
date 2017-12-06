@@ -1,4 +1,4 @@
 {
-  "test_binary.py": true,
+  "test_binary.py::test_binary_slice": true,
   "test_binary.py::test_first": true
 }
