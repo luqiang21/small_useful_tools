@@ -72,4 +72,5 @@ class Binary():
     def __invert__(self):
         return Binary([abs(int(i) - 1) for i in str(self)])
 
-    
+    def split(self, bits):
+        return (self[bits:], self[:bits])

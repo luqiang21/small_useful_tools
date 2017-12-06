@@ -81,3 +81,17 @@ def test_binary_illegal_index():
     with pytest.raises(IndexError):
         Binary('01101010')[7]
 
+def test_binary_split_no_remainder():
+    assert Binary('110').split(4) == (0, Binary('110'))
+
+def test_binary_split_remainder():
+    assert Binary('110').split(2) == (1, Binary('10'))
+
+def test_binary_split_exact():
+    assert Binary('100010110').split(9) == (0, Binary('100010110'))
+
+def test_binary_split_leading_zeros():
+#    assert Binary('100010110').split(8) == (1, Binary('10110'))
+    
+    assert Binary('100010110').split(8) == (1, 22)
+    
